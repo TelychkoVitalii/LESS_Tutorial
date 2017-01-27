@@ -1,0 +1,59 @@
+@primarycolor: #FF7F50; // @ is a variable
+
+@color:#800080;
+
+h1 {
+ color: @primarycolor;
+}
+h2 {
+ color: @color;
+}
+
+.container{ // nested rules
+  h1{
+       font-size: 25px;
+       color:#E45456;
+ }
+  p{
+       font-size: 25px;
+       color:#3C7949;
+  }
+
+  .myclass {
+  h1{
+        font-size: 25px;
+        color:#E45456;
+  }
+  p{
+       font-size: 25px;
+       color:#3C7949;
+  }
+ }
+}
+
+.myclass {
+  @media screen {
+    color: blue;
+    @media (min-width: 1024px) {
+      color: green;
+    }
+  }
+  @media mytext {
+    color: black;
+  }
+}
+
+@fontSize: 10px;
+.myclass {
+ font-size: @fontSize * 2;
+ color:green;
+}
+p {
+  color: ~"green";
+}
+@color: #FF8000;
+@width:1.0;
+.mycolor{
+color: @color;
+ width: percentage(@width);
+}
